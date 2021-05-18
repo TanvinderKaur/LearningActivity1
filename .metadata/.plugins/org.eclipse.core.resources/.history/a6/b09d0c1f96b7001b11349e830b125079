@@ -1,0 +1,36 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.ict100.junitprojects.Calculator;
+
+public class CalculatorTest {
+
+	@SuppressWarnings("deprecation")
+	@Test
+	public void CalulatorTest() {
+		assertEquals("error in add()", 3, Calculator.addition(1, 2));
+//		assertEquals("error in add()", -3, Calculator.addition(-1, -2));
+//		assertEquals("error in add()", 9, Calculator.addition(9, 0));
+	    assertEquals("error in subtraction()", 5, Calculator.subtraction(10,5));
+	    assertEquals("error in multiplication()", 50, Calculator.multiplication(10,5));
+	    assertEquals("error in division()", 5, Calculator.division(10,2));	
+	}
+
+	public void calculatorTestAddFail() {
+		assertEquals("error in add()", 0, Calculator.addition(1, 2));
+		
+	}
+	
+	public void calculatorTestSubPass() 
+	{
+		assertEquals("error in sub()", 1, Calculator.subtraction(1, 2));
+		assertEquals("error in sub()", -1, Calculator.subtraction(-1, -2));
+		assertEquals("error in sub()", 0, Calculator.subtraction(2, 1));
+	}
+
+	public void calculatorTestsubFail() {
+		assertEquals("error in add()", 0, Calculator.addition(2, 1));
+		
+	}
+}
